@@ -7,24 +7,6 @@
 // --------------------INSTRUCTOR EXAMPLE: Create a function that takes in two strings and determines which of the two strings has more characters. Use the two sets of test variables provided.
 
 // Pseudo code:
-// Function Signature
-// input: number
-// output: string indicating allowed, denied, or error
-
-// input: 39
-// output: "Cannot ride the rollercoaster"
-
-// input: 45
-// output: "Buckle up, let's ride"
-
-// input: "yolo"
-// output: "error"
-
-// Process
-// create a function called tallEnough that takes in a number called height
-// if height is less than 40 return "Cannot ride the rollercoaster"
-// if height is greater than or equal to 40 return "Buckle up, let's ride"
-// any other input return error
 
 // Set one:
 const fruit1 = "apple"
@@ -70,11 +52,11 @@ const temp3 = 212
 // Question 1 Solution:
 
 const tempCheck = (temperature) => {
-
+    
     // Charlean thank you for giving me this idea the other day
     // I learned that I can add multiple if/else if statments with a ternary operator
     return temperature > 212 ? `${temperature} is above boiling point` : temperature < 212 ? `${temperature} is below boiling point` : `${temperature} is at boiling point`
-
+    
 }
 
 console.log(tempCheck(temp1))
@@ -121,7 +103,7 @@ console.log(combineAndCountArray(padres1984WorldSeriesRuns,padres1998WorldSeries
 // create an empty array and empty string in the function
 // for loop that will reverse the index of the string
 // in the loop will have a temporary variable to hold the value of each index in the string
-// push the temporary array to the new array
+// push the temporary value to the new array
 // join the new array as a string and assign it to a new variable
 
 const currentCohort = "Hotel 2022"
@@ -133,9 +115,9 @@ const reverseString = (strValue) => {
     
     // taking the string and reversing it based on reversing the index
     for(let i = strValue.length - 1; i >=0; i--){        
-        let temp = strValue[i] // stores the strValue
-    
-        newArr.push(tempArr) // push tempArr to newArr
+        let tempVal = strValue[i] // stores the strValue
+        
+        newArr.push(tempVal) // push tempArr to newArr
         revString = newArr.join('') // assigned and joined the array as a string
     }
     return revString
@@ -147,6 +129,23 @@ console.log(reverseString(currentCohort))
 // --------------------4) Create the code that will return the last index of the given value from the array using the test variables provided below.
 
 // Pseudo code:
+// Function Signature
+// input: number
+// output: number indicating the last index based on test variable provided
+
+// input: 42
+// output: 7
+
+// input: 10
+// output: 8
+
+// input: 15
+// output: Value does not exsist in array.
+
+// Process
+// create a function called findIndex that takes in an array called arr1 and a number called value
+// if value matches the value of the last index in array return last index of value
+// else let user know number doesn't exist in array
 
 const myNumbers = [13, 34, 42, 5, 5, 10, 27, 42, 10]
 const givenValue1 = 42
@@ -155,12 +154,63 @@ const givenValue1 = 42
 const givenValue2 = 10
 // Expected output: 8
 
+const findIndex = (arr1, value) => {
+    
+    if (arr1[arr1.lastIndexOf(value)] === undefined) {
+        return `${value} does not exsist in array.`
+    }
+    else if (value === arr1[arr1.lastIndexOf(value)]){
+        return arr1.lastIndexOf(value)
+    }
+}
+
+console.log(findIndex(myNumbers,givenValue1))
+console.log(findIndex(myNumbers,givenValue2))
+console.log(findIndex(myNumbers, 15))
+
+
+
 // --------------------5) Create the code that will sort all the numbers in an array from largest to smallest. Use the test variables provided below.
 
 // Pseudo code:
+// Function Signature
+// input: array
+// output: an array with all the numbers sortued from largest to smallest
+
+// input: [79, 80, 72, 73, 82, 77, 76]
+// output: [82, 80, 79, 77, 76, 73, 72]
+
+// input: [59, 68, 62, 59, 66, 67, 66]
+// output: [68, 67, 66, 66, 62, 59, 59]
+
+// Process
+// create a function biggieSmalls that takes in an array called tempArray
+// create an empty array called revArray
+// use the sort method to sort tempArray from smallest to biggest
+// for loop to reverse the index order of tempArray
+// store the index value in a variable
+// push the variable to empty array
+// return array sorted from largest to smallest
 
 const sanDiegoSummerTemperatures = [79, 80, 72, 73, 82, 77, 76]
 // Expected output: [82, 80, 79, 77, 76, 73, 72]
 
 const sanDiegoWinterTemperatures = [59, 68, 62, 59, 66, 67, 66]
 // Expected output: [68, 67, 66, 66, 62, 59, 59]
+
+// Question 5 Solution
+
+const biggieSmalls = (tempArray) => {
+    let revArray = []
+    tempArray.sort()
+    
+    for (let i = tempArray.length - 1; i >= 0; i--){
+        let indexVal = tempArray[i]
+
+        revArray.push(indexVal)
+    }
+    return revArray    
+}
+
+console.log(biggieSmalls(sanDiegoSummerTemperatures))
+console.log(biggieSmalls(sanDiegoWinterTemperatures))
