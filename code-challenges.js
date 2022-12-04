@@ -164,6 +164,7 @@ console.log('Question 4 Solution:\n')
 
 const findIndex = (arr1, value) => {
 
+    // assigned a variable using ternary operator
     let indexValue = value === arr1[arr1.lastIndexOf(value)] ? arr1.lastIndexOf(value) : `${value} does not exsist in array.`
 
     return indexValue
