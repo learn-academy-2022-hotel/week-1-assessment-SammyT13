@@ -23,7 +23,7 @@ const fruit4 = "kiwi"
 // Pseudo code:
 // Function Signature
 // input: number
-// output: string indication below boiling point, at boiling point, or above boling point
+// output: string indicating below boiling point, at boiling point, or above boling point
 
 // input: 42
 // output: "42 is below boiling point"
@@ -31,7 +31,7 @@ const fruit4 = "kiwi"
 // input: 350
 // output: "350 is above boiling point"
 
-// input: "212"
+// input: 212
 // output: "212 is at boiling point"
 
 // Process
@@ -50,6 +50,7 @@ const temp3 = 212
 // Expected output: "212 is at boiling point"
 
 // Question 1 Solution:
+console.log('Question 1 Solution:\n')
 
 const tempCheck = (temperature) => {
     
@@ -61,7 +62,7 @@ const tempCheck = (temperature) => {
 
 console.log(tempCheck(temp1))
 console.log(tempCheck(temp2))
-console.log(tempCheck(temp3))
+console.log(tempCheck(temp3) + '\n')
 
 // --------------------2) Create the code that will combine the two arrays and return the length using the test variables provided below.
 
@@ -76,19 +77,20 @@ console.log(tempCheck(temp3))
 // Process
 // create a function called combineAndCountArray that takes in two arrays (2 parameters) called arr1 and arr2
 // create a new variable (const) that will concat array1 and array2 creating a new array
-// return the length of the new array = 9
+// return the length of the combined array
 
 const padres1984WorldSeriesRuns = [2, 5, 2, 2, 4]
 const padres1998WorldSeriesRuns = [6, 3, 5, 3]
 
-// Question 2 Solution
+// Question 2 Solution:
+console.log('Question 2 Solution:\n')
 
 const combineAndCountArray = (arr1, arr2) => {
     const newArray = arr1.concat(arr2)
     
     return newArray.length
 }
-console.log(combineAndCountArray(padres1984WorldSeriesRuns,padres1998WorldSeriesRuns))
+console.log(combineAndCountArray(padres1984WorldSeriesRuns,padres1998WorldSeriesRuns) + '\n')
 // Expected output: 9
 
 // --------------------3) Create the code that will reverse the letters of a string using the test variable provided below.
@@ -109,6 +111,9 @@ console.log(combineAndCountArray(padres1984WorldSeriesRuns,padres1998WorldSeries
 const currentCohort = "Hotel 2022"
 // Expected output: "2202 letoH"
 
+// Question 3 Solution:
+console.log('Question 3 Solution:\n')
+
 const reverseString = (strValue) => {
     let newArr = [] // empty array
     let revString = '' // empty string
@@ -123,7 +128,7 @@ const reverseString = (strValue) => {
     return revString
 }
 
-console.log(reverseString(currentCohort))
+console.log(reverseString(currentCohort) + '\n')
 
 
 // --------------------4) Create the code that will return the last index of the given value from the array using the test variables provided below.
@@ -145,7 +150,7 @@ console.log(reverseString(currentCohort))
 // Process
 // create a function called findIndex that takes in an array called arr1 and a number called value
 // if value matches the value of the last index in array return last index of value
-// else let user know number doesn't exist in array
+// else if value in array is undefined(index value doesn't exsist) let user know number doesn't exist in array
 
 const myNumbers = [13, 34, 42, 5, 5, 10, 27, 42, 10]
 const givenValue1 = 42
@@ -154,19 +159,20 @@ const givenValue1 = 42
 const givenValue2 = 10
 // Expected output: 8
 
+// Question 4 Solution:
+console.log('Question 4 Solution:\n')
+
 const findIndex = (arr1, value) => {
+
+    let indexValue = value === arr1[arr1.lastIndexOf(value)] ? arr1.lastIndexOf(value) : `${value} does not exsist in array.`
+
+    return indexValue
     
-    if (arr1[arr1.lastIndexOf(value)] === undefined) {
-        return `${value} does not exsist in array.`
-    }
-    else if (value === arr1[arr1.lastIndexOf(value)]){
-        return arr1.lastIndexOf(value)
-    }
 }
 
 console.log(findIndex(myNumbers,givenValue1))
 console.log(findIndex(myNumbers,givenValue2))
-console.log(findIndex(myNumbers, 15))
+console.log(findIndex(myNumbers, 15) + '\n')
 
 
 
@@ -198,11 +204,12 @@ const sanDiegoSummerTemperatures = [79, 80, 72, 73, 82, 77, 76]
 const sanDiegoWinterTemperatures = [59, 68, 62, 59, 66, 67, 66]
 // Expected output: [68, 67, 66, 66, 62, 59, 59]
 
-// Question 5 Solution
+// Question 5 Solution:
+console.log('Question 5 Solution: \n')
 
 const biggieSmalls = (tempArray) => {
-    let revArray = []
-    tempArray.sort()
+    let revArray = [] // empty array
+    tempArray.sort() // sorted array small to big
     
     for (let i = tempArray.length - 1; i >= 0; i--){
         let indexVal = tempArray[i]
