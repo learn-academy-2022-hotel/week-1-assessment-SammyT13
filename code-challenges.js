@@ -122,7 +122,7 @@ const reverseString = (strValue) => {
     for(let i = strValue.length - 1; i >=0; i--){        
         let tempVal = strValue[i] // stores the strValue
         
-        newArr.push(tempVal) // push tempArr to newArr
+        newArr.push(tempVal) // push tempArr value to newArr
         revString = newArr.join('') // assigned and joined the array as a string
     }
     return revString
@@ -215,7 +215,7 @@ const biggieSmalls = (tempArray) => {
     for (let i = tempArray.length - 1; i >= 0; i--){
         let indexVal = tempArray[i]
 
-        revArray.push(indexVal)
+        revArray.push(indexVal) // pushed value to revArray
     }
     return revArray    
 }
